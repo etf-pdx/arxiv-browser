@@ -1,0 +1,20 @@
+The hardest part of getting started with this project was trying to ideate what exactly I should make.
+I started by perusing the provided public API list and seeing which ones were interesting and feasible for me to manage on my own.
+The avatar generators https://avatars.dicebear.com/docs/http-api and maybe even https://thispersondoesnotexist.com/ seemed intriguing to me immediately, but gave no inspiration as to how to make that a dashboard application.
+
+I also thought that https://haveibeenpwned.com/API/v3 seemed interesting too, but still no ideas.
+Upon seeing https://github.com/fawazsullia/password-generator/, I thought perhaps I could make a sort of web page where you type in your email and then it checks if you're vulnerable and where - and offers new passwords for website your email may have been hacked.
+I decided to keep that in my back pocket, feeling like it may be hard to expand from that to reach my 1000 lines.
+
+Then I saw arXiv (https://arxiv.org/help/api/user-manual) and felt really inspired and wanted to make a little educational dashboard application that allowed you to peruse their articles by genre and with a search bar, sort by recency, etc.
+I could make a dashboard application which first used https://avatars.dicebear.com/docs/http-api to generate a new user profile with their educational preferences and store that seed and info as a browser cookie.
+When the cookie is present, it loads a dashboard with list of their liked genres at the left and a feed with recent news at the right.
+A search bar will be at the top of the feed, but the user can also click one of the genres at the left to filter by category as well.
+At the top hovering over everything would be the user's profile bar with their username and avatar?
+
+I decided to proceed with this idea. I first looked for anything about easy cookie manipulation in React. Bingo - https://www.npmjs.com/package/react-cookie.
+axios works fine enough for making the API calls. I'll keep using that.
+When making my own personal apps, I've always loved this site to help me get the initial piece set up: https://createapp.dev/
+For this project I'm using Snowpack, which I love because it works with Typescript out of the box.
+Obviously I'm using React, Jest, CSS, and Prettier. I decided to also try out Tailwind CSS since it required less dependecies than Bootstrap.
+Setting up the project, I named it arxiv-browser.
