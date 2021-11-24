@@ -19,3 +19,6 @@ For this project I'm using Snowpack, which I love because it works with Typescri
 Obviously I'm using React, Jest, CSS, and Prettier. I decided to also try out Tailwind CSS since it required less dependecies than Bootstrap.
 Setting up the project, I named it arxiv-browser.
 The public github repo can be found at: https://github.com/etf-pdx/arxiv-browser
+
+Upon doing some further reading, I noticed that on arXiv's website, they ask that anyone using their API please refrain from using "arXiv" in any project names.
+So I have renamed my project for now to educational-browser at https://github.com/etf-pdx/educational-browser.
