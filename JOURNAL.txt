@@ -18,3 +18,4 @@ When making my own personal apps, I've always loved this site to help me get the
 For this project I'm using Snowpack, which I love because it works with Typescript out of the box.
 Obviously I'm using React, Jest, CSS, and Prettier. I decided to also try out Tailwind CSS since it required less dependecies than Bootstrap.
 Setting up the project, I named it arxiv-browser.
+The public github repo can be found at: https://github.com/etf-pdx/arxiv-browser
