@@ -10,7 +10,7 @@ body {
     "Times New Roman",
     Times,
     serif;
-  color: slategray;
+  color: darkslategrey;
 }
 #app {
   flex: 1 0 auto;
