@@ -10797,7 +10797,7 @@ var FeedReader_default = FeedReader;
 
 // build/pages/Categories.js
 var Categories = () => {
-  const apiUrl = "http://export.arxiv.org/api/query?search_query=";
+  const apiUrl = "https://export.arxiv.org/api/query?search_query=";
   const resultsPerPage = 25;
   const [selectedCategory, setSelectedCategory] = useState("");
   return /* @__PURE__ */ createElement("section", null, /* @__PURE__ */ createElement("header", {
@@ -10834,7 +10834,7 @@ var Categories_default = Categories;
 
 // build/pages/Search.js
 var Search = () => {
-  const apiUrl = "http://export.arxiv.org/api/query?search_query=";
+  const apiUrl = "https://export.arxiv.org/api/query?search_query=";
   const resultsPerPage = 25;
   const [searchText, setSearchText] = useState("");
   const [searchOption, setSearchOption] = useState("all");
@@ -10887,7 +10887,7 @@ var getSearchFromCookie = (cookie) => {
 var Home = (props) => {
   const cookieName = "science-news-user-info";
   const cookie = props.cookies.get(cookieName);
-  const apiUrl = "http://export.arxiv.org/api/query?search_query=";
+  const apiUrl = "https://export.arxiv.org/api/query?search_query=";
   const resultsPerPage = 25;
   return /* @__PURE__ */ createElement("section", null, /* @__PURE__ */ createElement("header", null, /* @__PURE__ */ createElement(Avatar_default, {
     seed: cookie.seed
