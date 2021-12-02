@@ -10937,7 +10937,5 @@ var App = () => {
 var App_default = hot(App);
 
 // build/index.js
-render$1(/* @__PURE__ */ createElement(CookiesProvider, null, /* @__PURE__ */ createElement(HashRouter, {
-  basename: "/stem-news"
-}, /* @__PURE__ */ createElement(App_default, null))), document.getElementById("app"));
+render$1(/* @__PURE__ */ createElement(CookiesProvider, null, /* @__PURE__ */ createElement(HashRouter, null, /* @__PURE__ */ createElement(App_default, null))), document.getElementById("app"));
 //# sourceMappingURL=index.js.map
