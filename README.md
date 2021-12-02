@@ -3,6 +3,7 @@
 External libararies used in this project:
 - (react-router-dom)[https://www.npmjs.com/package/react-router-dom]
 - (react-cookie)[https://www.npmjs.com/package/react-cookie]
+- All the icons I used: (icons8)[https://icons8.com/icons]
 
 How I set this project up for myself:
 ```bash
