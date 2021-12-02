@@ -1,6 +1,7 @@
 (Repo URL)[https://github.com/etf-pdx/stem-news]
 
 External libararies used in this project:
+- (axios)[https://www.npmjs.com/package/axios]
 - (react-router-dom)[https://www.npmjs.com/package/react-router-dom]
 - (react-cookie)[https://www.npmjs.com/package/react-cookie]
 - All the icons I used: (icons8)[https://icons8.com/icons]
