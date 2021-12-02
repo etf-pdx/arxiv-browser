@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { hot } from "react-hot-loader/root";
 import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,7 +12,7 @@ import Home from './pages/Home';
 const App = () => {
   return (
     <main>
-      <h1>Science News!</h1>
+      <header>STEM News!</header>
       {
         (!useLocation().pathname.includes("sign-up")) ?
           <nav>
@@ -37,4 +38,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default hot(App);

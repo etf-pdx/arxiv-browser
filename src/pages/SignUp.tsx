@@ -2,7 +2,6 @@ import * as React from "react";
 import { withCookies, Cookies } from "react-cookie";
 import { Navigate } from 'react-router-dom';
 import { categories } from '../categories';
-
 interface SignUpProps {
   cookies: Cookies
 }
@@ -48,7 +47,7 @@ const SignUp = (props: SignUpProps) => {
           </label>
           <br />
           <div className="avatar">
-            <img src={`https://avatars.dicebear.com/api/avataaars/${seed}.svg`} />
+            <img src={`https://avatars.dicebear.com/api/avataaars/${seed}.svg`} width="100px" height="100px" />
           </div>
           <br />
           <label>
