@@ -1,0 +1,140 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Times New Roman', Times, serif;
+  color: slategray;
+}
+
+#app {
+  flex: 1 0 auto;
+}
+
+footer {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+  color: black;
+}
+
+main > header {
+  color: white;
+  background-color: black;
+  text-align: center;
+  font-size: xx-large;
+}
+
+section > header {
+  text-align: center;
+  text-justify: newspaper;
+  font-size: x-large;
+}
+
+.avatar {
+  display: inline-flex;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 45%;
+  background-color: lavender;
+  margin: 1em;
+}
+
+.avatarSetter {
+  display: flex;
+  flex-direction: row;
+}
+.avatarInputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+ul, summary {
+  list-style-type: none;
+}
+
+nav > ul {
+  display: flex;
+  flex-direction: row;
+  background-color: lavender;
+  justify-content: center;
+}
+nav > ul > li {
+  margin: 1em;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-size: large;
+}
+a:hover{
+  color:darkslateblue;
+}
+input[type='submit'], input[type='button'] {
+  color: darkslateblue;
+  background-color: white;
+  border: 1px solid darkslateblue;
+  border-radius: 5%;
+}
+input[type='submit']:hover, input[type='button']:hover {
+  color: white;
+  background-color: darkslateblue;
+}
+
+.category {
+  margin: 2em;
+}
+
+.subCategoryList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.subCategory {
+  flex: content;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em;
+  background-color: lavender;
+  border-radius: 5%;
+  border: 1px black dotted;
+  color: black;
+  padding: 1rem;
+}
+
+.preferencesCatList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+.preferencesCatList > li {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.feedReader > article {
+  margin-bottom: 2em;
+  border: 1px dotted lavender;
+  padding: 1rem;
+}
