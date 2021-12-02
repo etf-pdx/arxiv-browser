@@ -4,7 +4,7 @@
   "description": "A dashboard application where you may browse and read the latest educational articles of your favorite topics.",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "main": "index.js",
-  "homepage": "http://etf-pdx.github.io/stem-news",
+  "homepage": "http://etf-pdx.github.io/stem-news/",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
