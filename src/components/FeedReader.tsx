@@ -38,7 +38,7 @@ const FeedReader = (props: FeedReaderProps) => {
             <header>
               <a target="_blank" href={pdfInfo?.getAttribute("href") || ""}>{el.querySelector("title")?.innerHTML}</a>
             </header>
-            <summary>{el.querySelector("summary")?.innerHTML}</summary>
+            <summary className="abstract">{el.querySelector("summary")?.innerHTML}</summary>
             <details>
               Last Updated:&ensp;<time>{updateDate}</time>&emsp;Published:&ensp;<time>{published}</time>
               <br />
@@ -54,14 +54,26 @@ const FeedReader = (props: FeedReaderProps) => {
 
   return (
     <div className="feedReader">
-      {feed}
+      {(!feed?.length)? <p className="loadText">Loading...</p>:feed}
       <footer>
-        <input type="button" value="<" onClick={() => {
-          if(start != 0) setStart(start - props.resultsPerPage)
-        }} />
-        <input type="button" value=">" onClick={() => {
-          setStart(start + props.resultsPerPage)
-        }} />
+        <label>
+          Previous Page&ensp;
+          {(start == 0)?
+            <input type="button" value="<" onClick={() => {
+              if(start != 0) setStart(start - props.resultsPerPage)
+            }} disabled />
+            :
+            <input type="button" value="<" onClick={() => {
+              if(start != 0) setStart(start - props.resultsPerPage)
+            }} />
+          }
+        </label>
+        <label>
+          <input type="button" value=">" onClick={() => {
+            setStart(start + props.resultsPerPage)
+          }} />
+          &ensp;Next Page
+        </label>
       </footer>
     </div>
   );

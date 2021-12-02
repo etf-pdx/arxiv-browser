@@ -9,7 +9,7 @@ const Categories = () => {
 
   return (
     <section>
-      <header>Categories{(selectedCategory)?`> ${selectedCategory}`:""}</header>
+      <header onClick={() => setSelectedCategory("")}>Categories{(selectedCategory)?` > ${selectedCategory}`:""}</header>
       {
         (selectedCategory)?
           <div>
@@ -22,21 +22,19 @@ const Categories = () => {
             <input type="button" value="Select a different category..." onClick={() => setSelectedCategory("")} />
           </div>
         :
-          <ul>
+          <ul className="categoryList">
             {categories.map((cat, catIndex) => (
-              <li key={catIndex}>
+              <li className="category" key={catIndex}>
                 <div>
                   <img src={cat.iconUrl} />
                   <header>{cat.name}</header>
                 </div>
                 <hr />
-                <ul>
+                <ul className="subCategoryList">
                   {cat.subCategories.map((subCat, subCatIndex) =>(
-                    <li key={subCatIndex}>
-                      <label>
-                        <input type="image" alt={subCat.name} src={subCat.iconUrl} onClick={() => setSelectedCategory(subCat.id)} />
-                        &emsp;{subCat.name}
-                      </label>
+                    <li className="subCategory" key={subCatIndex}>
+                      <input type="image" alt={subCat.name} src={subCat.iconUrl} onClick={() => setSelectedCategory(subCat.id)} />
+                      <figcaption>{subCat.name}</figcaption>
                       <details>{subCat.description}</details>
                     </li>
                   ))}

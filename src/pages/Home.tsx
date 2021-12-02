@@ -1,6 +1,7 @@
 import axios from 'axios';
 import * as React from 'react';
 import { withCookies, Cookies } from "react-cookie";
+import Avatar from '../components/Avatar';
 import FeedReader from '../components/FeedReader';
 interface Cookie {
   username: string,
@@ -29,7 +30,12 @@ const Home = (props: HomeProps) => {
 
   return (
     <section>
-      <header>Home</header>
+      <header>
+        <Avatar seed={cookie.seed} />
+        <br />
+        Your Personalized Feed, {cookie.username}
+      </header>
+      <hr />
       <FeedReader
         baseUrl={apiUrl}
         searchQuery={getSearchFromCookie(cookie)}

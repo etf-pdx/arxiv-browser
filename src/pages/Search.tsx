@@ -12,6 +12,7 @@ const Search = () => {
     <section>
       <header>
         <input type="search" placeholder="Search term..." value={searchText} onChange={(event) => setSearchText(event.target.value)} />
+        &ensp;
         <select value={searchOption} onChange={(event) => setSearchOption(event.target.value)}>
           <option value="all">All</option>
           <option value="ti">Title</option>
@@ -21,23 +22,24 @@ const Search = () => {
           <option value="jr">Journal Reference</option>
           <option value="rn">Report Number</option>
         </select>
+        &ensp;
         <input type="button" value="Search" onClick={() => setSearchRequested(true)} />
-        <hr />
-        {
-          (searchRequested)?
-            <div>
-              <FeedReader
-                baseUrl={apiUrl}
-                searchQuery={`${searchOption}:${searchText}`}
-                resultsPerPage={resultsPerPage}
-                sortBy="lastUpdatedDate"
-              />
-              <input type="button" value="Clear Search" onClick={() => setSearchRequested(false)} />
-            </div>
-          :
-            <></>
-        }
       </header>
+      <hr />
+      {
+        (searchRequested)?
+          <div>
+            <FeedReader
+              baseUrl={apiUrl}
+              searchQuery={`${searchOption}:${searchText}`}
+              resultsPerPage={resultsPerPage}
+              sortBy="lastUpdatedDate"
+            />
+            <input type="button" value="Clear Search" onClick={() => setSearchRequested(false)} />
+          </div>
+        :
+          <></>
+      }
     </section>
   );
 }
