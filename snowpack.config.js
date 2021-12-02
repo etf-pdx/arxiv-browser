@@ -1,5 +1,9 @@
 module.exports = {
   mount: {
-    src: "/",
+    src: { url: "/" },
   },
+  plugins: ['@snowpack/plugin-typescript'],
+  optimize: {
+    bundle: true
+  }
 };

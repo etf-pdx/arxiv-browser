@@ -1,4 +1,3 @@
-import axios from 'axios';
 import * as React from 'react';
 import { withCookies, Cookies } from "react-cookie";
 import Avatar from '../components/Avatar';
@@ -25,7 +24,7 @@ const getSearchFromCookie = (cookie: Cookie) => {
 const Home = (props: HomeProps) => {
   const cookieName = 'science-news-user-info';
   const cookie = props.cookies.get(cookieName) as Cookie;
-  const apiUrl = "http://export.arxiv.org/api/query?search_query=";
+  const apiUrl = "https://export.arxiv.org/api/query?search_query=";
   const resultsPerPage = 25;
 
   return (

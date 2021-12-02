@@ -2,7 +2,7 @@ import * as React from "react";
 import FeedReader from "../components/FeedReader";
 
 const Search = () => {
-  const apiUrl = "http://export.arxiv.org/api/query?search_query=";
+  const apiUrl = "https://export.arxiv.org/api/query?search_query=";
   const resultsPerPage = 25;
   const [searchText, setSearchText] = React.useState("");
   const [searchOption, setSearchOption] = React.useState("all");

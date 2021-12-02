@@ -3,7 +3,7 @@ import { categories } from '../categories';
 import FeedReader from "../components/FeedReader";
 
 const Categories = () => {
-  const apiUrl = "http://export.arxiv.org/api/query?search_query=";
+  const apiUrl = "https://export.arxiv.org/api/query?search_query=";
   const resultsPerPage = 25;
   const [selectedCategory, setSelectedCategory] = React.useState("");
 

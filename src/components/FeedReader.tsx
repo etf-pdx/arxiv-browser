@@ -26,7 +26,7 @@ const FeedReader = (props: FeedReaderProps) => {
       
       const items = feedData.querySelectorAll("entry");
       let html = [] as React.ReactElement[];
-      items.forEach(el => {
+      items.forEach((el, key) => {
         const pdfInfo = el.querySelector("link[title='pdf']");
         const updateDate = el.querySelector("updated")?.innerHTML;
         const published = el.querySelector("published")?.innerHTML;
@@ -34,7 +34,7 @@ const FeedReader = (props: FeedReaderProps) => {
         el.querySelectorAll("author > name").forEach(author => authors.push(author.innerHTML));
 
         html.push(
-          <article>
+          <article key={key}>
             <header>
               <a target="_blank" href={pdfInfo?.getAttribute("href") || ""}>{el.querySelector("title")?.innerHTML}</a>
             </header>
