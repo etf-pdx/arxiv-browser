@@ -7100,95 +7100,115 @@ function J(b2) {
   }
   return h2;
 }
-function createBrowserHistory(b2) {
+function createHashHistory(b2) {
   function h2() {
-    var c2 = p2.location, a = m2.state || {};
-    return [a.idx, C({pathname: c2.pathname, search: c2.search, hash: c2.hash, state: a.usr || null, key: a.key || "default"})];
+    var a = J(m2.location.hash.substr(1)), e2 = a.pathname, l2 = a.search;
+    a = a.hash;
+    var g2 = u.state || {};
+    return [g2.idx, C({pathname: e2 === void 0 ? "/" : e2, search: l2 === void 0 ? "" : l2, hash: a === void 0 ? "" : a, state: g2.usr || null, key: g2.key || "default"})];
   }
-  function k2(c2) {
-    return typeof c2 === "string" ? c2 : I2(c2);
-  }
-  function x2(c2, a) {
-    a === void 0 && (a = null);
-    return C(_extends({pathname: q2.pathname, hash: "", search: ""}, typeof c2 === "string" ? J(c2) : c2, {state: a, key: H2()}));
-  }
-  function z2(c2) {
-    t2 = c2;
-    c2 = h2();
-    v2 = c2[0];
-    q2 = c2[1];
-    d2.call({action: t2, location: q2});
-  }
-  function A2(c2, a) {
-    function e2() {
-      A2(c2, a);
-    }
-    var l2 = r.Push, g2 = x2(c2, a);
-    if (!f2.length || (f2.call({action: l2, location: g2, retry: e2}), false)) {
-      var n2 = [{usr: g2.state, key: g2.key, idx: v2 + 1}, k2(g2)];
-      g2 = n2[0];
-      n2 = n2[1];
-      try {
-        m2.pushState(g2, "", n2);
-      } catch (G2) {
-        p2.location.assign(n2);
-      }
-      z2(l2);
-    }
-  }
-  function y3(c2, a) {
-    function e2() {
-      y3(c2, a);
-    }
-    var l2 = r.Replace, g2 = x2(c2, a);
-    f2.length && (f2.call({action: l2, location: g2, retry: e2}), 1) || (g2 = [{usr: g2.state, key: g2.key, idx: v2}, k2(g2)], m2.replaceState(g2[0], "", g2[1]), z2(l2));
-  }
-  function w2(c2) {
-    m2.go(c2);
-  }
-  b2 === void 0 && (b2 = {});
-  b2 = b2.window;
-  var p2 = b2 === void 0 ? document.defaultView : b2, m2 = p2.history, u = null;
-  p2.addEventListener("popstate", function() {
-    if (u)
-      f2.call(u), u = null;
+  function k2() {
+    if (t2)
+      c2.call(t2), t2 = null;
     else {
-      var c2 = r.Pop, a = h2(), e2 = a[0];
-      a = a[1];
-      if (f2.length)
-        if (e2 != null) {
-          var l2 = v2 - e2;
-          l2 && (u = {action: c2, location: a, retry: function() {
-            w2(-1 * l2);
-          }}, w2(l2));
+      var a = r.Pop, e2 = h2(), l2 = e2[0];
+      e2 = e2[1];
+      if (c2.length)
+        if (l2 != null) {
+          var g2 = q2 - l2;
+          g2 && (t2 = {action: a, location: e2, retry: function() {
+            p2(-1 * g2);
+          }}, p2(g2));
         } else
           ;
       else
-        z2(c2);
+        A2(a);
     }
+  }
+  function x2(a) {
+    var e2 = document.querySelector("base"), l2 = "";
+    e2 && e2.getAttribute("href") && (e2 = m2.location.href, l2 = e2.indexOf("#"), l2 = l2 === -1 ? e2 : e2.slice(0, l2));
+    return l2 + "#" + (typeof a === "string" ? a : I2(a));
+  }
+  function z2(a, e2) {
+    e2 === void 0 && (e2 = null);
+    return C(_extends({pathname: d2.pathname, hash: "", search: ""}, typeof a === "string" ? J(a) : a, {state: e2, key: H2()}));
+  }
+  function A2(a) {
+    v2 = a;
+    a = h2();
+    q2 = a[0];
+    d2 = a[1];
+    f2.call({action: v2, location: d2});
+  }
+  function y3(a, e2) {
+    function l2() {
+      y3(a, e2);
+    }
+    var g2 = r.Push, n2 = z2(a, e2);
+    if (!c2.length || (c2.call({action: g2, location: n2, retry: l2}), false)) {
+      var G2 = [{usr: n2.state, key: n2.key, idx: q2 + 1}, x2(n2)];
+      n2 = G2[0];
+      G2 = G2[1];
+      try {
+        u.pushState(n2, "", G2);
+      } catch (K) {
+        m2.location.assign(G2);
+      }
+      A2(g2);
+    }
+  }
+  function w2(a, e2) {
+    function l2() {
+      w2(a, e2);
+    }
+    var g2 = r.Replace, n2 = z2(a, e2);
+    c2.length && (c2.call({action: g2, location: n2, retry: l2}), 1) || (n2 = [{usr: n2.state, key: n2.key, idx: q2}, x2(n2)], u.replaceState(n2[0], "", n2[1]), A2(g2));
+  }
+  function p2(a) {
+    u.go(a);
+  }
+  b2 === void 0 && (b2 = {});
+  b2 = b2.window;
+  var m2 = b2 === void 0 ? document.defaultView : b2, u = m2.history, t2 = null;
+  m2.addEventListener("popstate", k2);
+  m2.addEventListener("hashchange", function() {
+    var a = h2()[1];
+    I2(a) !== I2(d2) && k2();
   });
-  var t2 = r.Pop;
+  var v2 = r.Pop;
   b2 = h2();
-  var v2 = b2[0], q2 = b2[1], d2 = F2(), f2 = F2();
-  v2 == null && (v2 = 0, m2.replaceState(_extends({}, m2.state, {idx: v2}), ""));
-  return {get action() {
-    return t2;
-  }, get location() {
-    return q2;
-  }, createHref: k2, push: A2, replace: y3, go: w2, back: function() {
-    w2(-1);
-  }, forward: function() {
-    w2(1);
-  }, listen: function(c2) {
-    return d2.push(c2);
-  }, block: function(c2) {
-    var a = f2.push(c2);
-    f2.length === 1 && p2.addEventListener("beforeunload", E);
-    return function() {
-      a();
-      f2.length || p2.removeEventListener("beforeunload", E);
-    };
-  }};
+  var q2 = b2[0], d2 = b2[1], f2 = F2(), c2 = F2();
+  q2 == null && (q2 = 0, u.replaceState(_extends({}, u.state, {idx: q2}), ""));
+  return {
+    get action() {
+      return v2;
+    },
+    get location() {
+      return d2;
+    },
+    createHref: x2,
+    push: y3,
+    replace: w2,
+    go: p2,
+    back: function() {
+      p2(-1);
+    },
+    forward: function() {
+      p2(1);
+    },
+    listen: function(a) {
+      return f2.push(a);
+    },
+    block: function(a) {
+      var e2 = c2.push(a);
+      c2.length === 1 && m2.addEventListener("beforeunload", E);
+      return function() {
+        e2();
+        c2.length || m2.removeEventListener("beforeunload", E);
+      };
+    }
+  };
 }
 /**
  * React Router v6.0.2
@@ -7722,15 +7742,15 @@ function _objectWithoutPropertiesLoose(source2, excluded) {
   return target;
 }
 var _excluded = ["onClick", "reloadDocument", "replace", "state", "target", "to"];
-function BrowserRouter(_ref) {
+function HashRouter(_ref2) {
   let {
     basename,
     children,
     window: window2
-  } = _ref;
+  } = _ref2;
   let historyRef = react.useRef();
   if (historyRef.current == null) {
-    historyRef.current = createBrowserHistory({
+    historyRef.current = createHashHistory({
       window: window2
     });
   }
@@ -10915,5 +10935,5 @@ var App = () => {
 var App_default = hot(App);
 
 // build/index.js
-render$1(/* @__PURE__ */ createElement(CookiesProvider, null, /* @__PURE__ */ createElement(BrowserRouter, null, /* @__PURE__ */ createElement(App_default, null))), document.getElementById("app"));
+render$1(/* @__PURE__ */ createElement(CookiesProvider, null, /* @__PURE__ */ createElement(HashRouter, null, /* @__PURE__ */ createElement(App_default, null))), document.getElementById("app"));
 //# sourceMappingURL=index.js.map
