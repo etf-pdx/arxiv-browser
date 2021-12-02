@@ -1,23 +1,24 @@
-html, body {
+/* build/styles.css */
+html,
+body {
   height: 100%;
 }
-
 body {
   display: flex;
   flex-direction: column;
-  font-family: 'Times New Roman', Times, serif;
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
   color: slategray;
 }
-
 #app {
   flex: 1 0 auto;
 }
-
 footer {
   text-align: center;
   flex-shrink: 0;
 }
-
 section {
   display: flex;
   justify-content: center;
@@ -26,26 +27,25 @@ section {
   margin-left: auto;
   margin-right: auto;
 }
-
 header {
-  font-family: 'Courier New', Courier, monospace;
+  font-family:
+    "Courier New",
+    Courier,
+    monospace;
   font-weight: bolder;
   color: black;
 }
-
 main > header {
   color: white;
   background-color: black;
   text-align: center;
   font-size: xx-large;
 }
-
 section > header {
   text-align: center;
   text-justify: newspaper;
   font-size: x-large;
 }
-
 .avatar {
   display: inline-flex;
   justify-content: center;
@@ -54,7 +54,6 @@ section > header {
   background-color: lavender;
   margin: 1em;
 }
-
 .avatarSetter {
   display: flex;
   flex-direction: row;
@@ -65,11 +64,10 @@ section > header {
   align-items: flex-end;
   justify-content: center;
 }
-
-ul, summary {
+ul,
+summary {
   list-style-type: none;
 }
-
 nav > ul {
   display: flex;
   flex-direction: row;
@@ -79,36 +77,34 @@ nav > ul {
 nav > ul > li {
   margin: 1em;
 }
-
 a {
   color: black;
   text-decoration: none;
   font-size: large;
 }
-a:hover{
-  color:darkslateblue;
+a:hover {
+  color: darkslateblue;
 }
-input[type='submit'], input[type='button'] {
+input[type=submit],
+input[type=button] {
   color: darkslateblue;
   background-color: white;
   border: 1px solid darkslateblue;
   border-radius: 5%;
 }
-input[type='submit']:hover, input[type='button']:hover {
+input[type=submit]:hover,
+input[type=button]:hover {
   color: white;
   background-color: darkslateblue;
 }
-
 .category {
   margin: 2em;
 }
-
 .subCategoryList {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-
 .subCategory {
   flex: content;
   display: inline-flex;
@@ -121,7 +117,6 @@ input[type='submit']:hover, input[type='button']:hover {
   color: black;
   padding: 1rem;
 }
-
 .preferencesCatList {
   display: flex;
   flex-direction: row;
@@ -132,7 +127,6 @@ input[type='submit']:hover, input[type='button']:hover {
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
-
 .feedReader > article {
   margin-bottom: 2em;
   border: 1px dotted lavender;
