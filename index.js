@@ -10749,13 +10749,15 @@ var FeedReader = (props) => {
       const feedData = new window.DOMParser().parseFromString(response.data, "text/xml");
       const items = feedData.querySelectorAll("entry");
       let html = [];
-      items.forEach((el) => {
+      items.forEach((el, key) => {
         const pdfInfo = el.querySelector("link[title='pdf']");
         const updateDate = el.querySelector("updated")?.innerHTML;
         const published = el.querySelector("published")?.innerHTML;
         var authors = [];
         el.querySelectorAll("author > name").forEach((author) => authors.push(author.innerHTML));
-        html.push(/* @__PURE__ */ createElement("article", null, /* @__PURE__ */ createElement("header", null, /* @__PURE__ */ createElement("a", {
+        html.push(/* @__PURE__ */ createElement("article", {
+          key
+        }, /* @__PURE__ */ createElement("header", null, /* @__PURE__ */ createElement("a", {
           target: "_blank",
           href: pdfInfo?.getAttribute("href") || ""
         }, el.querySelector("title")?.innerHTML)), /* @__PURE__ */ createElement("summary", {
