@@ -5,5 +5,8 @@ module.exports = {
   plugins: ['@snowpack/plugin-typescript'],
   optimize: {
     bundle: true
+  },
+  buildOptions: {
+    baseUrl: "./"
   }
 };
