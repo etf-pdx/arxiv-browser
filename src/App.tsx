@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { hot } from "react-hot-loader/root";
 import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import SignUp from './pages/SignUp';
 import Settings from './pages/Settings';
 import Categories from './pages/Categories';
